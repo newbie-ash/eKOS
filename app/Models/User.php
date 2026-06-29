@@ -47,4 +47,20 @@ class User extends Authenticatable implements PasskeyUser
             'two_factor_confirmed_at' => 'datetime',
         ];
     }
+    /**
+     * Cek apakah user adalah admin
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Cek apakah user adalah penghuni kos (user biasa)
+     */
+    public function isUser()
+    {
+        return $this->role === 'user';
+    }
 }
+
